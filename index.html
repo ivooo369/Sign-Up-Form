@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5599/5599504.png">
+    <title>Sign-Up-Form</title>
+</head>
+
+<body>
+    <header>
+        <div class="div-odin-image">
+            <img src="./imgs/odin_image.png" alt="Odin image" id="odin-image">
+            <h1>SIGN-UP-FORM</h1>
+        </div>
+        <p>Photo by <a href="https://unsplash.com/@panduior">pandu ior</a> on Unsplash</p>
+    </header>
+    <main>
+        <div class="heading">
+            <p>This is not a real online service! Nevermind, let's pretend it is. &#128513!</p>
+            <h2>HERE WE GO!</h2>
+        </div>
+        <form action="" method="GET" id="my-form">
+            <label for="first-name">*FIRST NAME <input type="text" name="first-name" id="first-name"
+                    pattern="[a-zA-Z]{2,64}" required></label>
+            <label for="last-name">*LAST NAME <input type="text" name="last-name" id="last-name"
+                    pattern="[a-zA-Z]{2,64}" required></label>
+            <label for="email">*EMAIL <input type="email" name="email" id="email" required></label>
+            <label for="phone-number">*PHONE NUMBER <input type="tel" name="phone-number" id="phone-number" minlength=10
+                    maxlength=10 pattern="[0-9]{10}" placeholder="10 digits" required></label>
+            <label for="password">*PASSWORD <input type="password" name="password" id="password"
+                    placeholder="From 5 to 20 characters" minlength=5 maxlength=20 required></label>
+            <label for="confirm-password">*CONFIRM PASSWORD <input type="password" name="confirm-password"
+                    id="confirm-password" placeholder="From 5 to 20 characters" minlength=5 maxlength=20
+                    required></label>
+        </form>
+        <button type="submit" id="submit-btn" form="my-form">CREATE ACCOUNT</button>
+        <p id="log-in">Already have an account? <a href>Log in</a></p>
+    </main>
+    <!-- <script>
+        let password = document.querySelector("#password");
+        let confirmPassword = document.querySelector("#confirm-password");
+        let form = document.querySelector("#my-form");
+
+        confirmPassword.addEventListener("input", (e) => {
+            if (confirmPassword.value === password.value) {
+                confirmPassword.classList.add(":valid");
+                confirmPassword.classList.remove(":invalid");
+            } else {
+                confirmPassword.classList.remove(":valid");
+                confirmPassword.classList.add(":invalid");
+            }
+        })
+    </script> -->
+</body>
+
+</html>

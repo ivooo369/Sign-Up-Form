@@ -25,9 +25,9 @@
         </div>
         <form action="" method="GET" id="my-form">
             <label for="first-name">*FIRST NAME <input type="text" name="first-name" id="first-name"
-                    pattern="[a-zA-Z]{2,64}" required></label>
+                    pattern="[a-zA-Zа-яА-Я][{2,64}" required></label>
             <label for="last-name">*LAST NAME <input type="text" name="last-name" id="last-name"
-                    pattern="[a-zA-Z]{2,64}" required></label>
+                    pattern="[a-zA-Zа-яА-Я][{2,64}" required></label>
             <label for="email">*EMAIL <input type="email" name="email" id="email" required></label>
             <label for="phone-number">*PHONE NUMBER <input type="tel" name="phone-number" id="phone-number" minlength=10
                     maxlength=10 pattern="[0-9]{10}" placeholder="10 digits" required></label>
@@ -40,21 +40,31 @@
         <button type="submit" id="submit-btn" form="my-form">CREATE ACCOUNT</button>
         <p id="log-in">Already have an account? <a href>Log in</a></p>
     </main>
-    <!-- <script>
-        let password = document.querySelector("#password");
-        let confirmPassword = document.querySelector("#confirm-password");
-        let form = document.querySelector("#my-form");
+    <script>
+        const passwordInput = document.querySelector('#password');
+        const confirmPasswordInput = document.querySelector('#confirm-password');
+        const form = document.querySelector("#my-form");
 
-        confirmPassword.addEventListener("input", (e) => {
-            if (confirmPassword.value === password.value) {
-                confirmPassword.classList.add(":valid");
-                confirmPassword.classList.remove(":invalid");
-            } else {
-                confirmPassword.classList.remove(":valid");
-                confirmPassword.classList.add(":invalid");
+        form.addEventListener("submit", (e) => {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                e.preventDefault();
             }
-        })
-    </script> -->
+        });
+
+        function checkPasswords() {
+            if (passwordInput.value === confirmPasswordInput.value) {
+                confirmPasswordInput.style.borderColor = 'green';
+                confirmPasswordInput.style.outline = 'none';
+            } else {
+                confirmPasswordInput.style.borderColor = 'red';
+                confirmPasswordInput.style.outline = 'none';
+            }
+        }
+
+        passwordInput.addEventListener('input', checkPasswords);
+        confirmPasswordInput.addEventListener('input', checkPasswords);
+
+    </script>
 </body>
 
 </html>

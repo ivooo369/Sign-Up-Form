@@ -21,10 +21,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* flex-grow: 1; */
   position: relative;
   width: 60vw;
-  /* min-width: 250px; */
   height: 100vh;
   background: url("./imgs/background_image.jpg");
   background-size: cover;
@@ -34,6 +32,12 @@ header {
 #odin-image {
   width: 5rem;
   padding: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .div-odin-image {
@@ -162,7 +166,7 @@ input:valid:focus {
   }
 
   .heading {
-    padding: 60px;
+    padding: 70px;
     font-size: 25px;
   }
 
@@ -176,6 +180,10 @@ input:valid:focus {
 }
 
 @media screen and (max-width: 500px) {
+  .heading {
+    padding: 30px;
+  }
+
   form {
     gap: 0;
     padding: 30px;

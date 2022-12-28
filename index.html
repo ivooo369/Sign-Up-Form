@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5599/5599504.png">
     <title>Sign-Up-Form</title>
 </head>
@@ -40,31 +41,6 @@
         <button type="submit" id="submit-btn" form="my-form">CREATE ACCOUNT</button>
         <p id="log-in">Already have an account? <a href>Log in</a></p>
     </main>
-    <script>
-        const passwordInput = document.querySelector('#password');
-        const confirmPasswordInput = document.querySelector('#confirm-password');
-        const form = document.querySelector("#my-form");
-
-        form.addEventListener("submit", (e) => {
-            if (passwordInput.value !== confirmPasswordInput.value) {
-                e.preventDefault();
-            }
-        });
-
-        function checkPasswords() {
-            if (passwordInput.value === confirmPasswordInput.value) {
-                confirmPasswordInput.style.borderColor = 'green';
-                confirmPasswordInput.style.outline = 'none';
-            } else {
-                confirmPasswordInput.style.borderColor = 'red';
-                confirmPasswordInput.style.outline = 'none';
-            }
-        }
-
-        passwordInput.addEventListener('input', checkPasswords);
-        confirmPasswordInput.addEventListener('input', checkPasswords);
-
-    </script>
 </body>
 
 </html>
